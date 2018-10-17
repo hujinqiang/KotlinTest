@@ -32,7 +32,16 @@ fun main(args: Array<String>) {
     testString()
 
     testList()
+
+    println("abcde".lastChar())
+
+    val (number,name ) = 1 to "one"
+    println("$number:$name")
+
+    println("12.345-6.A".split(".","-"))
 }
+
+fun String.lastChar():Char = this.get(this.length - 1)
 
 fun testList() {
 //    val set = hashSetOf(1,7,45)
@@ -61,11 +70,11 @@ fun testList() {
 fun <T> joinToString(collection: Collection<T>,separator: String = ",", prefix:String = "",postfix:String = ""):String{
     val result = StringBuilder(prefix)
 
-    for ((i,e) in collection.withIndex()){
-        if(i > 0){
+    for ((index,element) in collection.withIndex()){
+        if(index > 0){
             result.append(separator)
         }
-        result.append(e)
+        result.append(element)
     }
     result.append(postfix)
     return result.toString()
