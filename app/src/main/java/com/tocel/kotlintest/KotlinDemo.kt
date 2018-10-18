@@ -39,6 +39,40 @@ fun main(args: Array<String>) {
     println("$number:$name")
 
     println("12.345-6.A".split(".","-"))
+
+    //测试委托
+    val cset = CountingSet<Int>()
+    cset.addAll(listOf(1,1,2,2,2,2,2))
+    println("${cset.objectAdds} objects were added ,${cset.size} remain")
+
+    testCompanion()
+}
+
+fun testCompanion() {
+
+}
+
+class Person(val name:String){
+    companion object Loader{
+
+    }
+}
+
+class CountingSet<T>(
+    val innerSet: MutableCollection<T> = HashSet<T>()
+):MutableCollection<T> by innerSet{
+    var objectAdds = 0
+
+    override fun add(element: T): Boolean {
+        objectAdds++
+        return innerSet.add(element)
+    }
+
+    override fun addAll(elements: Collection<T>): Boolean {
+        objectAdds += elements.size
+        return innerSet.addAll(elements)
+    }
+
 }
 
 fun String.lastChar():Char = this.get(this.length - 1)
