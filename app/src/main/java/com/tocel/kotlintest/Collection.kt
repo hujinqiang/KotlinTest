@@ -1,6 +1,15 @@
 package com.tocel.kotlintest
 
 fun main(args: Array<String>) {
+
+    for (i in args.indices){
+        println("$i ${args[i]}")
+    }
+
+    args.forEachIndexed {
+            index,element -> println("$index   $element")
+    }
+
     testArray1()
 }
 
