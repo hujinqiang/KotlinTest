@@ -6,6 +6,8 @@ class Greeter(val name:String){
     }
 }
 
+fun salute() = println("Salute!")
+
 fun main(args: Array<String>) {
     Greeter("tom").greet()
     println(sum(5,12))
@@ -46,16 +48,12 @@ fun main(args: Array<String>) {
     println("${cset.objectAdds} objects were added ,${cset.size} remain")
 
     testCompanion()
+
+    run(::salute)
 }
 
 fun testCompanion() {
 
-}
-
-class Person(val name:String){
-    companion object Loader{
-
-    }
 }
 
 class CountingSet<T>(
@@ -191,9 +189,18 @@ fun testNull() {
     var a:Int?
 }
 
+fun printMessageWithPrefix(messages: Collection<String>,prefix: String){
+    messages.forEach {
+        println("$prefix $it")
+    }
+}
+
 fun testlambda(){
     val sumLambda:(Int,Int) -> Int = { x,y -> x * y}
     println(sumLambda(4,5))
+
+    val errors = listOf("403 Forbidden","404 Not Found")
+    printMessageWithPrefix(errors,"Error:")
 }
 
 //fun sum(a:Int ,b:Int) :Int{
