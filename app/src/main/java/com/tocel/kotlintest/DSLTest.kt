@@ -9,6 +9,8 @@ fun main(args: Array<String>) {
     println(stringBuilder)
 
     println(buildString { append("abcdefg") })
+
+
 }
 
 fun buildString(builderAction: StringBuilder.() -> Unit):String = StringBuilder().apply(builderAction).toString()

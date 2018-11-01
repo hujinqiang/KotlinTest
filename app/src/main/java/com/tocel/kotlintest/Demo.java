@@ -12,6 +12,8 @@ public class Demo {
             sum += i;
         }
         System.out.println(sum);
+
+        System.out.println((sum = 5) != 5);
     }
 
 }
