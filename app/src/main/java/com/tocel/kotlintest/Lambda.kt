@@ -1,6 +1,10 @@
 package com.tocel.kotlintest
 
+import java.lang.StringBuilder
+
 data class Person(val name:String,val age:Int)
+
+inline fun <reified T> membersOf() = T::class.java
 
 fun main(args: Array<String>) {
     testConstractor()
@@ -11,6 +15,7 @@ fun main(args: Array<String>) {
 
     testSequence()
 
+    println(membersOf<StringBuilder>())
 }
 
 fun testSequence() {
