@@ -13,7 +13,13 @@ fun main(args: Array<String>) {
 
     testMap()
 
-    testSequence()
+    testSequence();
+
+    //直接调用lambda表达式
+    { println(42)}()
+
+    run { println(42) }
+
 
     println(membersOf<StringBuilder>())
 }

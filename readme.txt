@@ -7,6 +7,10 @@
 6、中缀调用：infix声明的函数可以使用中缀符号调用。例如：mapOf(1 to "one",2 to "two")
 
 
+lambda表达式
+语法：
+{x:Int,y:Int -> x + y}
+
 类、对象、接口
 1、Kotlin中的内部类默认为嵌套类（即：Java的静态内部类，不持有对外部类的引用），要使用内部类需要使用“inner”关键字来声明修饰内部类
 在Kotlin中引用外部类实例，需要使用  this@Outer 来访问外部类
