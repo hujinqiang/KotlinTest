@@ -6,7 +6,7 @@ fun main(args: Array<String>) {
 //    launchTest()
 
 //    main1()
-//    blockCoroutine()
+    blockCoroutine()
     repeatTest()
 
 
