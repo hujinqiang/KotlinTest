@@ -1,1 +1,3 @@
 AsyncTask 会非常危险，因为当运行到 postExecute 时，如果Activity已经被销毁了，这里就会崩溃。
+
+自定义View的三步骤：布局、绘制、触摸反馈
