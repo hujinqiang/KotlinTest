@@ -10,6 +10,16 @@ fun main(args: Array<String>) {
     repeatTest()
 
 
+    printHeat()
+
+}
+fun printHeat() = runBlocking{
+    for(i in 0 until 10){
+        launch {
+            delay(1000L - i * 10)
+            print("❤$i ")
+        }
+    }
 }
 
 fun repeatTest() = runBlocking {
