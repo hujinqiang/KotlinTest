@@ -1,14 +1,5 @@
 package com.data_struct;
 
-import com.lmax.disruptor.BlockingWaitStrategy;
-import com.lmax.disruptor.EventFactory;
-import com.lmax.disruptor.EventHandler;
-import com.lmax.disruptor.RingBuffer;
-import com.lmax.disruptor.dsl.Disruptor;
-import com.lmax.disruptor.dsl.ProducerType;
-
-import java.util.concurrent.ThreadFactory;
-
 public class DisruptorMain
 {
     public static void main(String[] args) throws Exception
@@ -28,7 +19,7 @@ public class DisruptorMain
 
         }
 
-        // 生产者的线程工厂
+        /*// 生产者的线程工厂
         ThreadFactory threadFactory = new ThreadFactory(){
             @Override
             public Thread newThread(Runnable r) {
@@ -86,6 +77,6 @@ public class DisruptorMain
                 ringBuffer.publish(sequence);
             }
             Thread.sleep(10);
-        }
+        }*/
     }
 }
