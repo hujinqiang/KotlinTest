@@ -23,7 +23,7 @@ public class AudioStreamTest {
 
     static {
 
-        bufferSize = AudioTrack.getMinBufferSize(44100,AudioFormat.CHANNEL_OUT_MONO,AudioFormat.ENCODING_PCM_16BIT) * 2;
+        bufferSize = AudioTrack.getMinBufferSize(44100,AudioFormat.CHANNEL_OUT_MONO,AudioFormat.ENCODING_PCM_16BIT);
 
         log("min buffer size:" + bufferSize);
 
