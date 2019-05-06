@@ -6,26 +6,37 @@ fun main(args: Array<String>) {
 //    launchTest()
 
 //    main1()
-    blockCoroutine()
+//    blockCoroutine()
     repeatTest()
 
+//    printHeat()
 
 }
 
-fun repeatTest() = runBlocking {
-//    repeat(1000000){
-//        launch {
-//            delay(1000)
-//            println(".")
-//        }
-//    }
 
-    GlobalScope.launch {
-        repeat(1000){
-            println("I'm sleeping $it ...")
-            delay(500)
+fun printHeat() = runBlocking{
+    for(i in 0 until 10){
+        launch {
+            delay(10000L - i * 1000)
+            print("❤$i ")
         }
     }
+}
+
+fun repeatTest() = runBlocking {
+    repeat(1000000){
+        launch {
+            delay(1000)
+            println(".")
+        }
+    }
+
+//    GlobalScope.launch {
+//        repeat(1000){
+//            println("I'm sleeping $it ...")
+//            delay(500)
+//        }
+//    }
     delay(1300)
 }
 
