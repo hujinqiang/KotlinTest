@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() ,Handler.Callback{
             content.clear()
         }
         content.add(msg?.obj.toString())
-        tv_msg.setText(content.joinToString("\n",limit = 1,truncated = ""))
+        tv_msg.setText(content.sorted().joinToString("\n",limit = 1,truncated = ""))
         return true
     }
 
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() ,Handler.Callback{
     }
 
     private fun play() {
-        val job = GlobalScope.launch {
+        GlobalScope.launch {
             audioStream = AudioStreamTest()
             audioStream.setOnPlayFinishListener {
                 runOnUiThread {  play.isEnabled = true }
