@@ -10,6 +10,7 @@ public class SortTest {
         int[] arr = generateArray();
 
         insertSort(arr);
+        System.out.println("find element:" + bserarch(arr,arr.length,34));
 
         bubbleSort(generateArray());
 
@@ -54,7 +55,6 @@ public class SortTest {
 
         System.out.println("排序后:");
 //        printArray(a);
-
     }
 
     private static void calcCost(long start) {
@@ -86,6 +86,72 @@ public class SortTest {
         printArray(arr);
     }
 
+    /**
+     * 二分查找
+     * @param a
+     * @param n
+     * @param value
+     * @return
+     */
+    public static int bserarch(int[] a,int n,int value){
+        int low = 0;
+        int high = n - 1;
+
+        while (low <= high){
+            int mid = (low+high)>>1;
+            if(a[mid] == value){
+                return mid;
+            }else if(value > a[mid]){
+                low = mid + 1;
+            }else{
+                high = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    /**
+     * 二分查找第一个
+     * @param a
+     * @param n
+     * @param value
+     * @return
+     */
+    public static int bsearchFirst(int[] a,int n,int value){
+
+        int low = 0;
+        int high = n - 1;
+
+        while (low <= high){
+            int mid = (low + high)>>1;
+            if(a[mid] > value){
+                high = mid - 1;
+            }else if(a[mid] < value){
+                low = mid + 1;
+            }else{
+                if(mid == 0 || a[mid - 1] != value){
+                    return mid;
+                }else{
+                    high = mid - 1;
+                }
+            }
+        }
+
+        return -1;
+    }
+
+    /**
+     * 二分查找最后一个
+     * @param a
+     * @param n
+     * @param value
+     * @return
+     */
+    public static int bsearchLast(int[] a,int n,int value){
+
+        return -1;
+    }
 
     private static void printArray(int[] arr){
         for (int a:arr){
